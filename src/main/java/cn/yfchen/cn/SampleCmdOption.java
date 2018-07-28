@@ -4,6 +4,10 @@ import org.kohsuke.args4j.Option;
 
 public class SampleCmdOption {
 
+
+    @Option(name="--help", aliases="-h", usage="show this message")
+    public boolean help = false;
+
     @Option(name="--host", usage="mysql-host",required = true)
     public String host;
 

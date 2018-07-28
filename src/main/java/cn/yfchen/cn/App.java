@@ -23,6 +23,10 @@ public class App
         CmdLineParser parser = new CmdLineParser(option);
         try{
             parser.parseArgument(args);
+            if (option.help) {
+                parser.printUsage(System.err);
+                System.exit(0);
+            }
 
             System.out.println("host:"+option.host);
             System.out.println("user:"+option.user);
@@ -40,7 +44,9 @@ public class App
 
             System.out.println("success");
         }catch (Exception e){
+            parser.printUsage(System.err);
             System.out.println("Error in main: " + e.getMessage());
+
         }
 
     }

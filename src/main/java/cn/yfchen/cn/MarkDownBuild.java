@@ -23,7 +23,7 @@ public class MarkDownBuild {
             String tableName= (String) table.get("TABLE_NAME");
             String tableCommnet= (String) table.get("TABLE_COMMENT");
             text = text + "<a name=\""+tableName+"_pointer\" ></a>\n\n";
-            text = text + "* " + tableName + "表(" +tableCommnet + ")[↑](#返回顶部)\n\n";
+            text = text + "* " + tableName + "表(" +tableCommnet + ")[↑返回顶部](#返回顶部)\n\n";
             text += table_header;
             List<HashMap> columns= (List<HashMap>) tableColumnlists.get(tableName);
             for (HashMap column:columns){

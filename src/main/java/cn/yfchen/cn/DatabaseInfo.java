@@ -55,7 +55,6 @@ public class DatabaseInfo {
             System.out.println(" 实例化Statement对象...");
             String sql;
             sql = "SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA = '" + this.db + "'";
-            System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
             talbes = new ArrayList<HashMap>();
             ;

@@ -19,6 +19,7 @@ public class FileSave {
         FileWriter mdFile = new FileWriter("./md/" + db+".md");
         mdFile.write(text);
         mdFile.close();
+        System.out.println("markdonw文档生成成功：md/"+db+".md");
     }
     /**
      * 判断目录是否存在，不存在则创建
@@ -27,10 +28,8 @@ public class FileSave {
     public static void mkdirIfNotExist(String path) {
         File dirpath = new File(path);
         if (dirpath.exists()) {
-            System.out.println("目录存在！");
         } else {
             dirpath.mkdir();
-            System.out.println("目录不存在！");
         }
     }
     /**
@@ -47,5 +46,6 @@ public class FileSave {
         FileWriter mdFile = new FileWriter("./html/" + db+".html");
         mdFile.write(html);
         mdFile.close();
+        System.out.println("html文档生成成功：html/"+db+".html");
     }
 }
