@@ -1,6 +1,6 @@
 数据库问文档生成工具
 
-Aotu create mysql doc to markdown or html
+Auto create mysql doc to markdown or html
 
 工具使用：
 使用参数说明
