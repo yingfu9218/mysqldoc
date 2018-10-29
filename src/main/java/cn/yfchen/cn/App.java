@@ -32,7 +32,9 @@ public class App
             System.out.println("user:"+option.user);
             System.out.println("password:"+option.password);
             System.out.println("db:"+option.db);
-            DatabaseInfo databaseInfo=new DatabaseInfo(option.host,option.user,option.password,option.db);
+            Integer port= option.port==null  ?  3306:option.port;
+            System.out.println("db:"+port);
+            DatabaseInfo databaseInfo=new DatabaseInfo(option.host,option.user,option.password,option.db,port);
             HashMap tablelistsInfo= databaseInfo.getDatabaseAllInfo();
             MarkDownBuild markDownBuild=new MarkDownBuild();
             //解析markdown成markdown

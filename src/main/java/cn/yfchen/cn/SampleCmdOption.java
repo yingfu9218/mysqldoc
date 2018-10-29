@@ -11,6 +11,9 @@ public class SampleCmdOption {
     @Option(name="--host", usage="mysql-host",required = true)
     public String host;
 
+    @Option(name="--port",  usage="mysql-port")
+    public Integer port ;
+
     @Option(name="--user",  usage="mysql-user",required = true)
     public String user ;
 

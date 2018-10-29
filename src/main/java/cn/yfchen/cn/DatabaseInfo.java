@@ -26,14 +26,15 @@ public class DatabaseInfo {
      * @param user
      * @param password
      * @param db
+     * @param port
      * @throws SQLException
      */
-    public DatabaseInfo(String host,String user,String password,String db) throws SQLException {
+    public DatabaseInfo(String host, String user, String password, String db, Integer port) throws SQLException {
         this.host=host;
         this.user=user;
         this.password=password;
         this.db=db;
-        this.DB_URL= "jdbc:mysql://"+this.host+":3306/information_schema?characterEncoding=utf8&useSSL=true";
+        this.DB_URL= "jdbc:mysql://"+this.host+":"+port+"/information_schema?characterEncoding=utf8";
         conn = DriverManager.getConnection(this.DB_URL,this.user,this.password);
         this.stmt = conn.createStatement();
     }
@@ -55,6 +56,7 @@ public class DatabaseInfo {
             System.out.println(" 实例化Statement对象...");
             String sql;
             sql = "SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA = '" + this.db + "'";
+            System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
             talbes = new ArrayList<HashMap>();
             ;
